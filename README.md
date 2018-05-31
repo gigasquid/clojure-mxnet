@@ -30,15 +30,20 @@ The following systems are supported:
 
 There are two ways of getting going. The first way is the easiest and that is to use the pre-built jars from Maven. The second way is to build from source. In both cases, you will need to load the prereqs and dependencies, (like opencv).
 
+It's been tested on AWS Deep Learning AMI and OSX High Sierra 10.13.4
+
 
 ### Prerequistes
 Follow the instructions from https://mxnet.incubator.apache.org/install/osx_setup.html or https://mxnet.incubator.apache.org/install/ubuntu_setup.html
 about _Prepare Environment for GPU Installation_
 and _Install MXNet dependencies_
 
+If you are using the AWS Deep Learning Ubuntu or Linux AMI you should be good to go without doing anything on this step.
+
 The only difference is that for OSX you will need to install opencv2 to use the prebuilt jar
 `brew search opencv@2`
-` brew install opencv@2`
+`brew install opencv@2`
+
 
 ### Use Prebuilt Jars
 This will download the jars from maven with the needed MXNet native binarys in it. On startup, the native libraries are extracted from the jar and copied into a temporary location on your path. On termination, they are deleted.
