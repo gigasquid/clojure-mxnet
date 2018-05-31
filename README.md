@@ -34,11 +34,13 @@ It's been tested on AWS Deep Learning AMI and OSX High Sierra 10.13.4
 
 
 ### Prerequistes
+
+**If you are using the AWS Deep Learning Ubuntu or Linux AMI you should be good to go without doing anything on this step.**
+
+
 Follow the instructions from https://mxnet.incubator.apache.org/install/osx_setup.html or https://mxnet.incubator.apache.org/install/ubuntu_setup.html
 about _Prepare Environment for GPU Installation_
 and _Install MXNet dependencies_
-
-If you are using the AWS Deep Learning Ubuntu or Linux AMI you should be good to go without doing anything on this step.
 
 The only difference is that for OSX you will need to install opencv2 to use the prebuilt jar
 `brew search opencv@2`
@@ -52,7 +54,7 @@ If you want details on the flags (opencv verison and cuda version of the jars), 
 
 To use the prebuilt jars, you will need to replace the native version of the line in the project dependencies with your configuration.
 
-``
+`[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-gpu "1.2.0"]`
 or
 `[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-cpu "1.2.0"]`
 or
@@ -62,8 +64,8 @@ or
 ### Build from Source
 
 Checkout the lastest sha from the main package
-```
-` git clone --recursive https://github.com/dmlc/mxnet ~/mxnet`
+
+`git clone --recursive https://github.com/dmlc/mxnet ~/mxnet`
 `cd ~/mxnet`
 
 
