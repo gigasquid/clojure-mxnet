@@ -144,10 +144,8 @@ Gluon support will come later and may or may not be built on the Scala gluon api
 
 ## Punch List
 
-* Examples should have easy way to switch between cpu and gpu
+* High Level Documentation of project organization
 * Test out on clean install for rough edges
-* Stage for testers: Pre-built binarys for linux/ linux gpu (should be on maven)
-* Document tester instructions
 * Have people test all builds (OSX, Linux cpu, Linux gpu)
 * Add license to each file
 * PR for merge
@@ -157,7 +155,7 @@ Gluon support will come later and may or may not be built on the Scala gluon api
 * Feed Forward API
 * OSX gpu support Scala - defer to adding via Scala first
 * CustomOp port - defer due to class loader issues
-* Inference package - defer due to seperate jar artifact needed
+* Inference package - will tackle next
 
 ## Contributors
 - Carin Meier
