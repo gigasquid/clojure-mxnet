@@ -70,6 +70,7 @@ Checkout the lastest sha from the main package
 
 
 `git checkout tags/1.2.0 -b release-1.2.0`
+
 `git submodule update --init --recursive`
 
 Sometimes I find it useful to use this script to clean hard
@@ -128,7 +129,7 @@ _Note: There is an error thrown in the generated code due to some loading issues
 
 The motivation section addresses this, but the main reason is high leverage is using the great work that the Scala pacakge has already done.
 
-**How can I tell if the gpu is being used**
+**How can I tell if the gpu is being used?**
 I find this command to be very handy
 
 `nvidia-smi --query-gpu=timestamp,name,utilization.gpu,utilization.memory,memory.total,memory.free,memory.used --format=csv -l 5
