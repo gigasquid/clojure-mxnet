@@ -146,8 +146,6 @@ See the Confluence page: https://cwiki.apache.org/confluence/display/MXNET/MXNet
 
 ## Punch List
 
-* High Level Documentation of project organization
-* Test out on clean install for rough edges
 * Have people test all builds (OSX, Linux cpu, Linux gpu)
 * Add license to each file
 * PR for merge
