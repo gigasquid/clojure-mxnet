@@ -12,7 +12,7 @@ For high leverage, the Clojure package has been built on the existing Scala pack
 
 ## Current State and Plans
 
-The Clojure package is nearing the end of it's first development milestone which is to achieve a close parity with the Scala package and to get included into the main project for official Clojure language support.
+The Clojure package is nearing the end of its first development milestone which is to achieve a close parity with the Scala package and to get included into the main project for official Clojure language support.
 
 What is needed now is alpha testing on both OSX and Linux to discover any bugs, rough edges, and generally harden it before an official PR is opened on the main project.
 
@@ -33,7 +33,7 @@ There are two ways of getting going. The first way is the easiest and that is to
 It's been tested on AWS Deep Learning AMI and OSX High Sierra 10.13.4
 
 
-### Prerequistes
+### Prerequisites
 
 **If you are using the AWS Deep Learning Ubuntu or Linux AMI you should be good to go without doing anything on this step.**
 
@@ -48,7 +48,7 @@ The only difference is that for OSX you will need to install opencv2 to use the 
 
 
 ### Use Prebuilt Jars
-This will download the jars from maven with the needed MXNet native binarys in it. On startup, the native libraries are extracted from the jar and copied into a temporary location on your path. On termination, they are deleted.
+This will download the jars from maven with the needed MXNet native binaries in it. On startup, the native libraries are extracted from the jar and copied into a temporary location on your path. On termination, they are deleted.
 
 If you want details on the flags (opencv verison and cuda version of the jars), they are documented here https://cwiki.apache.org/confluence/display/MXNET/MXNet-Scala+Release+Process
 
@@ -63,7 +63,7 @@ or
 
 ### Build from Source
 
-Checkout the lastest sha from the main package
+Checkout the latest sha from the main package
 
 `git clone --recursive https://github.com/dmlc/mxnet ~/mxnet`
 `cd ~/mxnet`
@@ -73,7 +73,7 @@ Checkout the lastest sha from the main package
 
 `git submodule update --init --recursive`
 
-Sometimes I find it useful to use this script to clean hard
+Sometimes it useful to use this script to clean hard
 https://gist.github.com/nicktoumpelis/11214362
 
 
@@ -90,7 +90,7 @@ To test your installation, you should run `lein test`. This will run the test su
 
 ### Generation of NDArray and Symbol apis
 
-The bulk of the ndarray and symbol apis are generated via java relection into the Scala classes. To generate, use the `dev/generator.clj` file. These generated files are checked in as source, so the only time you would need to run them is if you are updated the clojure package with an updated scala jar and want to regenerate the code.
+The bulk of the ndarray and symbol apis are generated via java reflection into the Scala classes. To generate, use the `dev/generator.clj` file. These generated files are checked in as source, so the only time you would need to run them is if you are updated the clojure package with an updated scala jar and want to regenerate the code.
 
 To do this run the leiningen task
 `lein run -m dev.generator`
@@ -127,7 +127,7 @@ _Note: There is an error thrown in the generated code due to some loading issues
 
 **Why build on the Scala package?**
 
-The motivation section addresses this, but the main reason is high leverage is using the great work that the Scala pacakge has already done.
+The motivation section addresses this, but the main reason is high leverage is using the great work that the Scala package has already done.
 
 **How can I tell if the gpu is being used?**
 I find this command to be very handy
@@ -136,11 +136,13 @@ I find this command to be very handy
 timestamp, name, utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]`
 
 **Is the Gluon Api supported?**
-There are 3 high level apis supported in MxNet: FeedForward, Module, and Gluon. The Module api is supported in the Clojure package because of the exisiting support for it in the Scala package. The Module api is very similar to the Gluon api and examples of the usage can be found in the examples directory.
+There are 3 high level apis supported in MxNet: FeedForward, Module, and Gluon. The Module api is supported in the Clojure package because of the existing support for it in the Scala package. The Module api is very similar to the Gluon api and examples of the usage can be found in the examples directory.
 
 Gluon support will come later and may or may not be built on the Scala gluon api (when it lands there)
 
+## Architecture & Design
 
+See the Confluence page: https://cwiki.apache.org/confluence/display/MXNET/MXNet+Clojure
 
 ## Punch List
 
