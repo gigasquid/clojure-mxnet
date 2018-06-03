@@ -1,4 +1,4 @@
-(defproject org.apache.clojure-mxnet/clojure-mxnet "0.1.0-SNAPSHOT"
+(defproject org.apache.clojure-mxnet/clojure-mxnet "0.1.1-SNAPSHOT"
   :description "Clojure package for MXNet"
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [t6/from-scala "0.3.0"]
