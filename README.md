@@ -50,9 +50,9 @@ The only difference is that for OSX you will need to install opencv2 to use the 
 ### Use Prebuilt Jars
 There are deployed jars on Clojars for each supported system
 
-* [org.apache.clojure-mxnet/clojure-mxnet-linux-gpu "0.1.1-SNAPSHOT"]
-* [org.apache.clojure-mxnet/clojure-mxnet-linux-cpu "0.1.1-SNAPSHOT"]
-* [org.apache.clojure-mxnet/clojure-mxnet-osx-cpu "0.1.1-SNAPSHOT"]
+* `[org.apache.clojure-mxnet/clojure-mxnet-linux-gpu "0.1.1-SNAPSHOT"]`
+* `[org.apache.clojure-mxnet/clojure-mxnet-linux-cpu "0.1.1-SNAPSHOT"]`
+* `[org.apache.clojure-mxnet/clojure-mxnet-osx-cpu "0.1.1-SNAPSHOT"]`
 
 
 To test you can do something like:
