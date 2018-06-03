@@ -48,9 +48,38 @@ The only difference is that for OSX you will need to install opencv2 to use the 
 
 
 ### Use Prebuilt Jars
-This will download the jars from maven with the needed MXNet native binaries in it. On startup, the native libraries are extracted from the jar and copied into a temporary location on your path. On termination, they are deleted.
+There are deployed jars on Clojars for each supported system
+
+* [org.apache.clojure-mxnet/clojure-mxnet-linux-gpu "0.1.1-SNAPSHOT"]
+* [org.apache.clojure-mxnet/clojure-mxnet-linux-cpu "0.1.1-SNAPSHOT"]
+* [org.apache.clojure-mxnet/clojure-mxnet-osx-cpu "0.1.1-SNAPSHOT"]
+
+
+To test you can do something like:
+
+```clojure
+
+(ns tutorial.ndarray
+  (:require [org.apache.clojure-mxnet.ndarray :as ndarray]
+            [org.apache.clojure-mxnet.context :as context]))
+
+;;Create NDArray
+(def a (ndarray/zeros [100 50])) ;;all zero arrray of dimension 100 x 50
+(def b (ndarray/ones [256 32 128 1])) ;; all one array of dimension
+(def c (ndarray/array [1 2 3 4 5 6] [2 3])) ;; array with contents of a shape 2 x 3
+
+;;; There are also ways to convert to a vec or get the shape as an object or vec
+(ndarray/->vec c) ;=> [1.0 2.0 3.0 4.0 5.0 6.0]
+```
+
+See the examples/tutorial section for more.
+
+
+The jars from maven with the needed MXNet native binaries in it. On startup, the native libraries are extracted from the jar and copied into a temporary location on your path. On termination, they are deleted.
 
 If you want details on the flags (opencv verison and cuda version of the jars), they are documented here https://cwiki.apache.org/confluence/display/MXNET/MXNet-Scala+Release+Process
+
+#### Cloning the repo and running from source
 
 To use the prebuilt jars, you will need to replace the native version of the line in the project dependencies with your configuration.
 
@@ -61,7 +90,7 @@ or
 `[org.apache.mxnet/mxnet-full_2.11-osx-x86_64-cpu "1.2.0"]`
 
 
-### Build from Source
+### Build from MXNET Source
 
 Checkout the latest sha from the main package
 
@@ -83,12 +112,12 @@ Go here to do the base package installation https://mxnet.incubator.apache.org/i
 
 then replace the correct jar for your architecture in the project.clj, example `[ml.dmlc.mxnet/mxnet-full_2.11-osx-x86_64-cpu "1.0.1-SNAPSHOT"]`
 
-### Test your installation
+#### Test your installation
 
 To test your installation, you should run `lein test`. This will run the test suite (CPU) for the clojure package.
 
 
-### Generation of NDArray and Symbol apis
+#### Generation of NDArray and Symbol apis
 
 The bulk of the ndarray and symbol apis are generated via java reflection into the Scala classes. To generate, use the `dev/generator.clj` file. These generated files are checked in as source, so the only time you would need to run them is if you are updated the clojure package with an updated scala jar and want to regenerate the code.
 

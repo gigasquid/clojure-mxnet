@@ -13,7 +13,7 @@
 
 ;;; There are also ways to convert to a vec or get the shape as an object or vec
 (ndarray/->vec c) ;=> [1.0 2.0 3.0 4.0 5.0 6.0]
-(ndarray/shape c) ;=> #object[ml.dmlc.mxnet.Shape 0x583c865 "(2,3)"]
+(ndarray/shape c) ;=> #object[org.apache.mxnet.Shape 0x583c865 "(2,3)"]
 (ndarray/shape-vec c) ;=> [2 3]
 
 
