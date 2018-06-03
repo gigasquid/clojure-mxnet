@@ -54,21 +54,21 @@
 (ndarray/->vec res) ;=> [11.0]
 
 ;;Save and Load NDArray
-;;You can use MXNet functions to save and load a list or dictionary of NDArrays from file systems, as follows:
+;;You can use MXNet functions to save and load a map of NDArrays from file systems, as follows:
 
 (ndarray/save "filename" {"arr1" arr1 "arr2" arr2})
 ;; you can also do "s3://path" or "hdfs"
 
 ;; to load
 (def from-file (ndarray/load "filename"))
-from-file ;=>{"arr1" #object[ml.dmlc.mxnet.NDArray 0x6115ba61 "ml.dmlc.mxnet.NDArray@43d85753"], "arr2" #object[ml.dmlc.mxnet.NDArray 0x374b5eff "ml.dmlc.mxnet.NDArray@5c93def4"]}
+from-file ;=>{"arr1" #object[org.apache.mxnet.NDArray 0x6115ba61 "org.apache.mxnet.NDArray@43d85753"], "arr2" #object[org.apache.mxnet.NDArray 0x374b5eff "org.apache.mxnet.NDArray@5c93def4"]}
 
 ;;Multi-Device Support
 
 ;;Device information is stored in the mxnet.Context structure. When creating NDArray in MXNet, you can use the context argument (the default is the CPU context) to create arrays on specific devices as follows:
 
 (def cpu-a (ndarray/zeros [100 200]))
-(ndarray/context cpu-a) ;=> #object[ml.dmlc.mxnet.Context 0x3f376123 "cpu(0)"]
+(ndarray/context cpu-a) ;=> #object[org.apache.mxnet.Context 0x3f376123 "cpu(0)"]
 
 (def gpu-b (ndarray/zeros [100 200] {:ctx (context/gpu 0)})) ;; to use with gpu
 
