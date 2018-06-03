@@ -12,7 +12,7 @@ For high leverage, the Clojure package has been built on the existing Scala pack
 
 ## Current State and Plans
 
-The Clojure package is nearing the end of its first development milestone which is to achieve a close parity with the Scala package and to get included into the main project for official Clojure language support.
+The Clojure package is nearing the end of its first development milestone which is to achieve a close parity with the Scala package and to potentially be included into the main project for official Clojure language support.
 
 What is needed now is alpha testing on both OSX and Linux to discover any bugs, rough edges, and generally harden it before an official PR is opened on the main project.
 
