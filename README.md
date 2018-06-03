@@ -173,12 +173,6 @@ Gluon support will come later and may or may not be built on the Scala gluon api
 
 See the Confluence page: https://cwiki.apache.org/confluence/display/MXNET/MXNet+Clojure
 
-## Punch List
-
-* Have people test all builds (OSX, Linux cpu, Linux gpu)
-* Add license to each file
-* PR for merge
-* Maven build process
 
 ### Deferred
 * Feed Forward API
