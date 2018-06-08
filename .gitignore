@@ -33,6 +33,8 @@ examples/multi-label/data/t10k-images-idx3-ubyte
 examples/multi-label/data/t10k-labels-idx1-ubyte
 examples/multi-label/data/train-images-idx3-ubyte
 examples/multi-label/data/train-labels-idx1-ubyte
+examples/visualization/test-vis/*
+examples/visualization/test-vis.pdf
 .DS_Store
 src/.DS_Store
 src/org/.DS_Store

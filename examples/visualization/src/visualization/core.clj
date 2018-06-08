@@ -22,19 +22,19 @@
 (defn get-symbol []
   (as-> (sym/variable "data") data
 
-    (sym/convolution "conv1" {:data data :kernel [3 3] :num-filter 32 :stride [2 2]})
-    (sym/batch-norm "bn1" {:data data})
-    (sym/activation "relu1" {:data data :act-type "relu"})
-    (sym/pooling "mp1" {:data data :kernel [2 2] :pool-type "max" :stride [2 2]})
+    #_(sym/convolution "conv1" {:data data :kernel [3 3] :num-filter 32 :stride [2 2]})
+    #_(sym/batch-norm "bn1" {:data data})
+    #_(sym/activation "relu1" {:data data :act-type "relu"})
+    #_(sym/pooling "mp1" {:data data :kernel [2 2] :pool-type "max" :stride [2 2]})
 
 
-    (sym/convolution "conv2" {:data data :kernel [3 3] :num-filter 32 :stride [2 2]})
-    (sym/batch-norm "bn2" {:data data})
-    (sym/activation "relu2" {:data data :act-type "relu"})
-    (sym/pooling "mp2" {:data data :kernel [2 2] :pool-type "max" :stride [2 2]})
+    #_(sym/convolution "conv2" {:data data :kernel [3 3] :num-filter 32 :stride [2 2]})
+    #_(sym/batch-norm "bn2" {:data data})
+    #_(sym/activation "relu2" {:data data :act-type "relu"})
+    #_(sym/pooling "mp2" {:data data :kernel [2 2] :pool-type "max" :stride [2 2]})
 
     (sym/flatten "fl" {:data data})
-    (sym/fully-connected "fc2" {:data data :num-hidden 10})
+    #_(sym/fully-connected "fc2" {:data data :num-hidden 10})
     (sym/softmax-output "softmax" {:data data})))
 
 (defn test-viz []
