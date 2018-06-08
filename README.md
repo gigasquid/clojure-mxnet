@@ -184,5 +184,5 @@ See the Confluence page: https://cwiki.apache.org/confluence/display/MXNET/MXNet
 Special thanks to people that provided testing and feedback to make this possible
 
 - Chris Hodapp
-- Iñaki Arenaza
+- Iñaki Arenaza & Magnet Coop
 - r0man
