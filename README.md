@@ -180,5 +180,9 @@ See the Confluence page: https://cwiki.apache.org/confluence/display/MXNET/MXNet
 * CustomOp port - defer due to class loader issues
 * Inference package - will tackle next
 
-## Contributors
-- Carin Meier
+## Special Thanks
+Special thanks to people that provided testing and feedback to make this possible
+
+- Chris Hodapp
+- Iñaki Arenaza
+- r0man
