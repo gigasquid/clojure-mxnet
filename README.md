@@ -187,3 +187,5 @@ Special thanks to people that provided testing and feedback to make this possibl
 - Iñaki Arenaza & Magnet Coop
 - r0man
 - Ben Kamphaus
+- Sivaram Konanki
+- Rustam Gilaztdinov 
