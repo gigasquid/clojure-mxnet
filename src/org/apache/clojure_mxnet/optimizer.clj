@@ -66,9 +66,9 @@
           epsilon 1e-8
           wd 0.0
           clip-gradient 0}}]
-   (new AdaDelta (float rho) (float rescale-gradient) (float epsilon) (float wd) (float clip-gradient))
-   ([]
-    (ada-delta {}))))
+   (new AdaDelta (float rho) (float rescale-gradient) (float epsilon) (float wd) (float clip-gradient)))
+  ([]
+   (ada-delta {})))
 
 (defn rms-prop
   "RMSProp optimizer as described in Tieleman & Hinton, 2012.
