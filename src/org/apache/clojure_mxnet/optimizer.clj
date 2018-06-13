@@ -93,8 +93,8 @@
    (rms-prop {})))
 
 (defn ada-grad
-  " AdaGrad optimizer as described in Matthew D. Zeiler, 2012.
-   http://arxiv.org/pdf/1212.5701v1.pdf
+  " AdaGrad optimizer as described in Duchi, Hazan and Singer, 2011.
+   http://www.jmlr.org/papers/volume12/duchi11a/duchi11a.pdf
 
    - learning-rate Step size.
    - epsilon A small number to make the updating processing stable.
