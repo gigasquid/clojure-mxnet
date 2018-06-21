@@ -5,6 +5,7 @@
 (deftest test-clojure-case
   (is (= "foo-bar" (gen/clojure-case "FooBar")))
   (is (= "foo-bar" (gen/clojure-case "foo_bar")))
+  (is (= "foo-bar" (gen/clojure-case "Foo_Bar")))
   (is (= "div+" (gen/clojure-case "/+"))))
 
 (defn ndarray-reflect-info [name]

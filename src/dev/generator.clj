@@ -27,7 +27,7 @@
 (defn clojure-case
   [string]
   (-> string
-      (clojure.string/replace #"(.)([A-Z][a-z]+)" "$1-$2")
+      (clojure.string/replace #"(\s+)([A-Z][a-z]+)" "$1-$2")
       (clojure.string/replace #"([a-z0-9])([A-Z])" "$1-$2")
       (clojure.string/lower-case)
       (clojure.string/replace #"\_" "-")
