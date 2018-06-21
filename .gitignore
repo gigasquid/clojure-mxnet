@@ -38,3 +38,5 @@ examples/visualization/test-vis.pdf
 .DS_Store
 src/.DS_Store
 src/org/.DS_Store
+test/test-ndarray.clj
+test/test-symbol.clj
