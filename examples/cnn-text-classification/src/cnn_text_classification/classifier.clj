@@ -40,11 +40,11 @@
         test (into [] (drop train-num shuffled))]
     {:training {:data  (ndarray/array (into [] (flatten (mapv (fn [v] (first v)) training)))
                                       [train-num 1 sentence-size embedding-size]) ;; has to be channel x y
-                :label (ndarray/array (into [] (flatten (mapv (fn [v] (last v) ) training)))
+                :label (ndarray/array (into [] (flatten (mapv (fn [v] (last v)) training)))
                                       [train-num])}
      :test {:data  (ndarray/array (into [] (flatten (mapv (fn [v] (first v)) test)))
                                   [test-num 1 sentence-size embedding-size]) ;; has to be channel x y
-            :label (ndarray/array (into [] (flatten (mapv (fn [v] (last v) ) test)))
+            :label (ndarray/array (into [] (flatten (mapv (fn [v] (last v)) test)))
                                   [test-num])}}))
 
 ;;; convnet with multiple filter sizes
@@ -78,12 +78,12 @@
         sentence-size (:sentence-size ms-dataset)
         shuffled (shuffle-data test-size ms-dataset)
         train-data (mx-io/ndarray-iter [(get-in shuffled [:training :data])]
-                                       {:label[(get-in  shuffled [:training :label])]
+                                       {:label [(get-in  shuffled [:training :label])]
                                         :label-name "softmax_label"
                                         :data-batch-size batch-size
                                         :last-batch-handle "pad"})
         test-data (mx-io/ndarray-iter [(get-in shuffled [:test :data])]
-                                      {:label[(get-in  shuffled [:test :label])]
+                                      {:label [(get-in  shuffled [:test :label])]
                                        :label-name "softmax_label"
                                        :data-batch-size batch-size
                                        :last-batch-handle "pad"})]
@@ -105,8 +105,6 @@
     ;; runs all the examples
     #_(train-convnet {:embedding-size 50 :batch-size 100 :test-size 1000 :num-epoch 10})))
 
-
 (comment
-  (train-convnet {:devs [(context/cpu)] :embedding-size 50 :batch-size 10 :test-size 100 :num-epoch 10 :max-examples 1000})
-  )
+  (train-convnet {:devs [(context/cpu)] :embedding-size 50 :batch-size 10 :test-size 100 :num-epoch 10 :max-examples 1000}))
 
