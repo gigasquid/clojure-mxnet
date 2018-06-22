@@ -17,6 +17,7 @@
 
 (defproject imclassification "0.1.0-SNAPSHOT"
   :description "Clojure examples for image classification"
+  :plugins [[lein-cljfmt "0.5.7"]]
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.apache.mxnet.contrib.clojure/clojure-mxnet "1.2.1-SNAPSHOT"]]
   :main imclassification.train-mnist
