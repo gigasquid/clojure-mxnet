@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
 # distributed with this work for additional information
@@ -19,9 +18,6 @@
 
 set -evx
 
-mkdir -p model
-cd model
-wget http://data.mxnet.io/models/imagenet/resnet/50-layers/resnet-50-symbol.json
-wget http://data.mxnet.io/models/imagenet/resnet/50-layers/resnet-50-0000.params
-cd ..
-
+MXNET_HOME=${PWD}
+cd ${MXNET_HOME}/contrib/clojure-package
+lein test
