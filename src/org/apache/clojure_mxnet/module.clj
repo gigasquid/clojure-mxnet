@@ -598,7 +598,7 @@
        ;; evaluation on the validation set
        (when eval-data
          (let [res (score fmod {:eval-data eval-data :eval-metric eval-metric :epoch i})]
-           (println "Epoch " i " Validation- " res)))))
+          (println "Epoch " i " Validation- " res)))))
     fmod)
   ;; old way if the problem with the sizes get resolved in DataDesc
   #_(doto mod

@@ -15,14 +15,19 @@
 ;; limitations under the License.
 ;;
 
-(defproject org.apache.mxnet.contrib.clojure/clojure-mxnet "1.2.1-SNAPSHOT"
+(defproject org.apache.mxnet.contrib.clojure/clojure-mxnet "1.3.0-SNAPSHOT"
   :description "Clojure package for MXNet"
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [t6/from-scala "0.3.0"]
-                 ;; Choose the right dependency for your system
-                 ;[org.apache.mxnet/mxnet-full_2.11-osx-x86_64-cpu "1.2.1"]
-                 [org.apache.mxnet/mxnet-full_2.11-linux-x86_64-cpu "1.2.1"]
+
+                 ;; Jars from Nexus
+                 [org.apache.mxnet/mxnet-full_2.11-osx-x86_64-cpu "1.2.1"]
                  ;[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-gpu "1.2.1"]
+                 ;[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-gpu "1.2.1"]
+
+                 ;;; CI
+                 #_[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-cpu "1.3.0-SNAPSHOT"]
+
                  [org.clojure/tools.logging "0.4.0"]
                  [org.apache.logging.log4j/log4j-core "2.8.1"]
                  [org.apache.logging.log4j/log4j-api "2.8.1"]
