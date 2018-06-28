@@ -111,4 +111,3 @@
 (comment
   (train-convnet {:devs [(context/cpu)] :embedding-size 50 :batch-size 10 :test-size 100 :num-epoch 10 :max-examples 1000})
   )
-
