@@ -18,7 +18,7 @@ What is needed now is alpha testing on both OSX and Linux to discover any bugs, 
 
 Help with this effort is greatly appreciated and contributors will be recognized in the project README.
 
-Testing instructions can be found in the Testing.md
+Testing instructions can be found in the testing.md
 
 ## Getting Started
 
@@ -43,15 +43,16 @@ about _Prepare Environment for GPU Installation_
 and _Install MXNet dependencies_
 
 
-### Use Prebuilt Jars
-There are deployed jars on Clojars for each supported system
+#### Cloning the repo and running from source
 
-* `[org.apache.clojure-mxnet/clojure-mxnet-linux-gpu "0.1.1-SNAPSHOT"]`
-* `[org.apache.clojure-mxnet/clojure-mxnet-linux-cpu "0.1.1-SNAPSHOT"]`
-* `[org.apache.clojure-mxnet/clojure-mxnet-osx-cpu "0.1.1-SNAPSHOT"]`
+To use the prebuilt jars, you will need to replace the native version of the line in the project dependencies with your configuration.
 
+`[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-gpu "1.2.0"]`
+or
+`[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-cpu "1.2.0"]`
+or
+`[org.apache.mxnet/mxnet-full_2.11-osx-x86_64-cpu "1.2.0"]`
 
-To test you can do something like:
 
 ```clojure
 
@@ -74,16 +75,6 @@ See the examples/tutorial section for more.
 The jars from maven with the needed MXNet native binaries in it. On startup, the native libraries are extracted from the jar and copied into a temporary location on your path. On termination, they are deleted.
 
 If you want details on the flags (opencv verison and cuda version of the jars), they are documented here https://cwiki.apache.org/confluence/display/MXNET/MXNet-Scala+Release+Process
-
-#### Cloning the repo and running from source
-
-To use the prebuilt jars, you will need to replace the native version of the line in the project dependencies with your configuration.
-
-`[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-gpu "1.2.0"]`
-or
-`[org.apache.mxnet/mxnet-full_2.11-linux-x86_64-cpu "1.2.0"]`
-or
-`[org.apache.mxnet/mxnet-full_2.11-osx-x86_64-cpu "1.2.0"]`
 
 
 ### Build from MXNET Source
@@ -118,7 +109,7 @@ To test your installation, you should run `lein test`. This will run the test su
 The bulk of the ndarray and symbol apis are generated via java reflection into the Scala classes. To generate, use the `dev/generator.clj` file. These generated files are checked in as source, so the only time you would need to run them is if you are updated the clojure package with an updated scala jar and want to regenerate the code.
 
 To do this run the leiningen task
-`lein run -m dev.generator`
+`lein run generate-code`
 
 Or load in the repl and use the functions:
 
@@ -164,8 +155,8 @@ I find this command to be very handy
 `nvidia-smi --query-gpu=timestamp,name,utilization.gpu,utilization.memory,memory.total,memory.free,memory.used --format=csv -l 5
 timestamp, name, utilization.gpu [%], utilization.memory [%], memory.total [MiB], memory.free [MiB], memory.used [MiB]`
 
-**Is the Gluon Api supported?**
-There are 3 high level apis supported in MxNet: FeedForward, Module, and Gluon. The Module api is supported in the Clojure package because of the existing support for it in the Scala package. The Module api is very similar to the Gluon api and examples of the usage can be found in the examples directory.
+**Supported APIs**
+There are 3 high level apis supported in MxNet: (Model/FeedForward), Module, and Gluon. The Module api is supported in the Clojure package because of the existing support for it in the Scala package. The Module api is very similar to the Gluon api and examples of the usage can be found in the examples directory. The Model/FeedForward Api is deprected.
 
 Gluon support will come later and may or may not be built on the Scala gluon api (when it lands there)
 
