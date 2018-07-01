@@ -2,12 +2,14 @@
 
 A clojure package to the MXNet Deep Learning library
 
-## We've joined the Apache MXNet project
+## We've joined the Apache MXNet project!
 
 We are very happy to have joined the [Apache MXNet (Incubutating) project](https://github.com/apache/incubator-mxnet)!
 We look forward to growing MXNet and Clojure together there.
 
-Please head on over to that github repo and check out the Clojure package README in `contrib/clojure-package`.
+Please head on over to that github repo and check out the Clojure package README in the [contrib/clojure-package](https://github.com/apache/incubator-mxnet/tree/master/contrib/clojure-package).
+
+If you would like to open an issue or PR, please do so at the main MXNet repo - thanks!
 
 ### Join us
 
